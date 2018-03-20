@@ -2,7 +2,7 @@ runtime lib/option_parser.vim
 runtime lib/temp_file.vim
 runtime lib/slack_message.vim
 
-let s:slack_params = [ 'channels', 'title', 'comment', 'language' ]
+let s:slack_params = [ 'users', 'channels', 'title', 'comment', 'language' ]
 
 function! slack#version()
     return '1.0.0'
@@ -17,7 +17,7 @@ function! slack#post(kwargs)
   try
     let l:options = g:OptionParser.parse(a:kwargs, s:slack_params)
     let l:tmp_file = g:TempFile.new()
-    let l:slack_message = g:SlackMessage.new(g:slack_file_upload_url, g:slack_vim_token, l:tmp_file.path(), l:options)
+    let l:slack_message = g:SlackMessage.new(g:slack_vim_token, l:tmp_file.path(), l:options)
 
     call l:tmp_file.write_selection()
     call l:slack_message.post_snippet()
@@ -44,3 +44,4 @@ if !exists('g:slack_vim_token')
 endif
 
 call s:set_var("g:slack_file_upload_url", "https://slack.com/api/files.upload")
+call s:set_var("g:slack_user_lookup_by_email_url", "https://slack.com/api/users.lookupByEmail")

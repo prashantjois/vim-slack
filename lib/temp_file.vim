@@ -13,7 +13,7 @@ function! TempFile.path()
 
   return self.abs_path
 endfunction
-"
+
 function! TempFile.get_name()
   let l:prefix = "vim-slack"
   let l:extension = expand('%:e')
