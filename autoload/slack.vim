@@ -22,6 +22,7 @@ function! slack#post(kwargs)
     call l:tmp_file.write_selection()
     call l:slack_message.post_snippet()
     call l:tmp_file.delete()
+    echom "Slacked your message :)"
   catch /.*/
     echoerr v:exception
   endtry
