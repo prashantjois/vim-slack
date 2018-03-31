@@ -10,6 +10,8 @@ I want to share code (or text) with my teammates on slack without leaving vim!
 
 ## Demo
 
+![Demo](https://github.com/prashantjois/vim-slack/blob/master/slack-demo.gif)
+
 ## Pre-reqs
 ------------
 
