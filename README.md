@@ -33,7 +33,7 @@ Plugin 'prashantjois/vim-slack'
 
 ## Configuration
 
-You need at least to specify your API token:
+You need at least to specify your API token (get it [https://api.slack.com/custom-integrations/legacy-tokens](here), or set up OAuth and generate it that way):
 
 ```
 let g:slack_vim_token="xoxp-1234567890-283747610183-320837472577-5687c77204a63ef6496834749a3788ab"
